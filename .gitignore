@@ -1,0 +1,14 @@
+_ReSharper*
+[Oo]bj
+[Bb]in
+deploy
+deploy/*
+*.suo
+*.pdb
+*.user
+*.cache
+*.vsmdi
+*.testsettings
+packages/*
+.vs/*
+Debug
