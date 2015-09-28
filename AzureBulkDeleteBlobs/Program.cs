@@ -37,7 +37,10 @@ namespace BulkDeleteBlobs
             string fileSearchPattern = args[0];
 
             string pathSearchPattern = args[1];
-
+            //Make sure path ends with a slash to avoid deleting files inside folders with similar name
+            // example: searching for folder "public/log" with also delete folder "public/log-admin"
+            if (!pathSearchPattern.EndsWith("/"))
+                pathSearchPattern += "/";
             //Get container names
             //Simply remove all paramenters we've collected. The remaining will be container names
             var containerNames = args.Where(a => a != fileSearchPattern && a != pathSearchPattern && a != "-verbose");
